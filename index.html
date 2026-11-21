@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>পোর্টফোলিও</title>
+  <meta name="description" content="আমার ব্যক্তিগত পোর্টফোলিও">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atma:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- উপরের বার: থিম ও শেয়ার বাটন -->
+  <header class="topbar">
+    <span class="brand" id="brandName"></span>
+    <div class="topbar-actions">
+      <button class="sticker-btn" id="themeBtn" aria-label="ডার্ক মোড চালু/বন্ধ করুন">
+        <span id="themeIcon">🌙</span><span class="btn-text" id="themeText">রাত</span>
+      </button>
+      <button class="sticker-btn" id="shareBtn" aria-label="শেয়ার করুন">
+        <span>📤</span><span class="btn-text">শেয়ার</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- পরিচিতি -->
+    <section class="hero" id="about">
+      <div class="box about-box">
+        <div class="photo-frame">
+          <img id="profileImg" alt="প্রোফাইল ছবি">
+        </div>
+        <div class="about-text">
+          <h1 id="name"></h1>
+          <p class="tagline" id="tagline"></p>
+          <p class="bio" id="bio"></p>
+          <ul class="socials" id="socials"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- হাইলাইট (স্লাইডিং কার্ড) -->
+    <section id="highlights">
+      <div class="section-head">
+        <h2>হাইলাইট</h2>
+        <div class="slider-controls">
+          <button class="sticker-btn small" id="prevBtn" aria-label="আগের কার্ড">‹</button>
+          <button class="sticker-btn small" id="nextBtn" aria-label="পরের কার্ড">›</button>
+        </div>
+      </div>
+      <div class="slider" id="slider" tabindex="0"></div>
+    </section>
+
+    <!-- গ্যালারি -->
+    <section id="gallery">
+      <div class="section-head"><h2>গ্যালারি</h2></div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </section>
+
+    <!-- সার্টিফিকেট -->
+    <section id="certificates">
+      <div class="section-head"><h2>সার্টিফিকেট</h2></div>
+      <div class="cert-grid" id="certGrid"></div>
+    </section>
+
+    <!-- যোগাযোগ -->
+    <section id="contact">
+      <div class="section-head"><h2>যোগাযোগ</h2></div>
+      <div class="box contact-box">
+        <ul class="contact-list" id="contactList"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p id="footerText"></p>
+  </footer>
+
+  <!-- ছবি বড় করে দেখার লাইটবক্স -->
+  <div class="overlay" id="lightbox" hidden>
+    <div class="modal lightbox-modal" role="dialog" aria-modal="true" aria-label="ছবি">
+      <button class="close-btn" data-close aria-label="বন্ধ করুন">✕</button>
+      <img id="lightboxImg" alt="">
+      <p id="lightboxCaption" class="caption"></p>
+    </div>
+  </div>
+
+  <!-- শেয়ার মেনু -->
+  <div class="overlay" id="shareModal" hidden>
+    <div class="modal share-modal" role="dialog" aria-modal="true" aria-label="শেয়ার করুন">
+      <button class="close-btn" data-close aria-label="বন্ধ করুন">✕</button>
+      <h3>পোর্টফোলিও শেয়ার করুন</h3>
+      <div class="qr-wrap"><div id="qrBox"></div></div>
+      <p class="share-link" id="shareLink"></p>
+      <div class="share-actions">
+        <button class="sticker-btn" id="copyBtn">🔗 লিঙ্ক কপি</button>
+        <button class="sticker-btn" id="nativeShareBtn" hidden>📲 শেয়ার করুন</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="data/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
